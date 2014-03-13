@@ -173,13 +173,13 @@ public class ImageViewFragment extends Fragment {
         startProgressSpinner();
         imageLoader = getImageLoader(ctxt);
 
-        if (thisType == GalleryPageAdapter.ImageSource.FILE.getType()) {
+        if (thisType.equals(GalleryPageAdapter.ImageSource.FILE.getType()) ) {
             imageLoader.load(new File(imageUrl))
                     // drawable to insert while waiting for image to download
                     .placeholder(R.drawable.spinner_black_16)
                             // optionally use Picasso's Callback interface to prevent GC
                     .into(mImageView, imageLoadFinished);
-        } else if (thisType == GalleryPageAdapter.ImageSource.URL.getType()) {
+        } else if (thisType.equals( GalleryPageAdapter.ImageSource.URL.getType()) ) {
             imageLoader.load(imageUrl)
                     // drawable to insert while waiting for image to download
                     .placeholder(R.drawable.spinner_black_16)
